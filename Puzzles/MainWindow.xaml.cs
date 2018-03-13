@@ -23,6 +23,7 @@ namespace Puzzles
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModel();
         }
     }
 }
