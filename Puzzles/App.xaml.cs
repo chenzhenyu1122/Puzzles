@@ -13,5 +13,15 @@ namespace Puzzles
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            AppDomain CurrentDomain = AppDomain.CurrentDomain;
+            CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(Handler);
+        }
+        static void Handler(object Sender, UnhandledExceptionEventArgs Args)
+        {
+            Exception ex = (Exception)Args.ExceptionObject;
+            MessageBox.Show(ex.Message);
+        }
     }
 }

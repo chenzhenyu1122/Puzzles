@@ -56,7 +56,7 @@ namespace Puzzles
         public ViewModel()
         {
             Check.Com = fSend;
-            using (SqlConnection db = new SqlConnection("Data Source=DESKTOP-A0N5237;Initial Catalog=Puzzles;Integrated Security=True"))
+            using (SqlConnection db = new SqlConnection(Properties.Settings.Default.DataBase))
             {
                 SqlCommand query = new SqlCommand("select PuzzleText, Answer from Puzzles", db);
                 SqlDataReader reader;
